@@ -1,7 +1,10 @@
 package tasks;
 
 public class Task1 {
-         /*
+    /*  I randomly selected this case from https://www.techlistic.com/2020/06/automate-ecommerce-website.html ,
+    the website recommended by our mentor. We can change it, if you like.
+     */
+    /*
     1. Test Case - Automate User Registration process of e-commerce website.
 
     Steps to Automate:
@@ -13,5 +16,6 @@ public class Task1 {
     6. Click on Register button.
     7. Validate that user is created.
      */
+
 
 }
