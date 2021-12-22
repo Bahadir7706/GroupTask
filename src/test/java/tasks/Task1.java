@@ -1,6 +1,7 @@
 package tasks;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,6 +31,10 @@ public class Task1 {
         //1.Navigate to url:  http://automationpractice.com/index.php
         driver.get("http://automationpractice.com/index.php");
         driver.manage().window().maximize();
+
+        //2.Locate to "sign in" link and click
+        WebElement signInButton = driver.findElement(By.cssSelector(".login"));
+        signInButton.click();
 
 
     }
