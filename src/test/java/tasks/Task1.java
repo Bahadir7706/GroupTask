@@ -27,6 +27,10 @@ public class Task1 {
     WebDriver driver;
     @Test
     public  void test1(){
+        //1.Navigate to url:  http://automationpractice.com/index.php
+        driver.get("http://automationpractice.com/index.php");
+        driver.manage().window().maximize();
+
 
     }
     @BeforeMethod
