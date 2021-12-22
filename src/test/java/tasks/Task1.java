@@ -36,6 +36,10 @@ public class Task1 {
         WebElement signInButton = driver.findElement(By.cssSelector(".login"));
         signInButton.click();
 
+        //3.Locate to "email adress input box" and enter an email
+        WebElement emailInputBox = driver.findElement(By.id("email_create"));
+        emailInputBox.sendKeys("aliveli4950@gmail.com");
+
 
     }
     @BeforeMethod
