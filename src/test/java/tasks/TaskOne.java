@@ -45,6 +45,12 @@ public class TaskOne {
         //4. Click on Create an Account button.
         WebElement createAnAccountButton = driver.findElement(By.xpath("//button[@class='btn btn-default button button-medium exclusive']"));
         createAnAccountButton.click();
+
+        Thread.sleep(3000);
+
+        //Step five-additional info provided
+        WebElement additionalInfo = driver.findElement(By.cssSelector("#other"));
+        additionalInfo.sendKeys("this is a temporary address");
     }
     @BeforeMethod
     public void openChromeBrowser(){
