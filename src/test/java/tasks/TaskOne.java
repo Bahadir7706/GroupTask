@@ -27,7 +27,7 @@ public class Task1 {
 
     WebDriver driver;
     @Test
-    public  void test1() throws InterruptedException {
+    public  void test1(){
         //1.Navigate to url:  http://automationpractice.com/index.php
         driver.get("http://automationpractice.com/index.php");
         driver.manage().window().maximize();
@@ -35,9 +35,6 @@ public class Task1 {
         //2.Locate to "sign in" link and click
         WebElement signInButton = driver.findElement(By.cssSelector(".login"));
         signInButton.click();
-
-        //It takes some time so it will be better to wait for 2 seconds
-        Thread.sleep(2000);
 
         //Enter your email address in 'Create and account' section.
        // WebElement emailBox = driver.findElement(By.cssSelector("#email_create"));
@@ -47,10 +44,6 @@ public class Task1 {
         WebElement emailInputBox = driver.findElement(By.id("email_create"));
         emailInputBox.sendKeys("aliveli4950@gmail.com");
 
-        //Click to create account button
-        driver.findElement(By.id("SubmitCreate")).click();
-        Thread.sleep(2000);
-
 
     }
     @BeforeMethod
@@ -59,6 +52,7 @@ public class Task1 {
         driver= new ChromeDriver();
 
         //nice work!
-    }//asdasdf
+    }
+
 
 }
