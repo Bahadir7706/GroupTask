@@ -28,7 +28,7 @@ public class TaskOne {
 
     WebDriver driver;
     @Test
-    public  void test1() throws InterruptedException {
+    public  void test1(){
         //1.Navigate to url:  http://automationpractice.com/index.php
         driver.get("http://automationpractice.com/index.php");
         driver.manage().window().maximize();
@@ -37,8 +37,8 @@ public class TaskOne {
         WebElement signInButton = driver.findElement(By.cssSelector(".login"));
         signInButton.click();
 
-        Thread.sleep(3000);
 
+        Thread.sleep(3000);
         //3.Locate to "email adress input box" and enter an email
         WebElement emailInputBox = driver.findElement(By.id("email_create"));
         emailInputBox.sendKeys("aliveli4950@gmail.com");
@@ -74,6 +74,10 @@ public class TaskOne {
 
 
 
+        //Click to create account button
+        driver.findElement(By.id("SubmitCreate")).click();
+        Thread.sleep(2000);
+
 
     }
     @BeforeMethod
@@ -81,6 +85,9 @@ public class TaskOne {
         WebDriverManager.chromedriver().setup();
         driver= new ChromeDriver();
 
+        //nice work!
+        //new added from onur
+        //another function
     }
 
 
