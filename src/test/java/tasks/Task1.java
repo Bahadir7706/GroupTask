@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class Task1 {
+
     /*  I randomly selected this case from https://www.techlistic.com/2020/06/automate-ecommerce-website.html ,
     the website recommended by our mentor. We can change it, if you like.
      */
@@ -28,6 +29,7 @@ public class Task1 {
     WebDriver driver;
     @Test
     public  void test1() throws InterruptedException {
+        System.out.println("helps");
         //1.Navigate to url:  http://automationpractice.com/index.php
         driver.get("http://automationpractice.com/index.php");
         driver.manage().window().maximize();
