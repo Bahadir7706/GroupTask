@@ -37,8 +37,13 @@ public class Task1 {
         signInButton.click();
 
         //Enter your email address in 'Create and account' section.
-        WebElement emailBox = driver.findElement(By.cssSelector("#email_create"));
-        emailBox.sendKeys("bkucukuysal@yahoo.com");
+       // WebElement emailBox = driver.findElement(By.cssSelector("#email_create"));
+       // emailBox.sendKeys("bkuysal@yahoo.com");
+
+        //3.Locate to "email adress input box" and enter an email
+        WebElement emailInputBox = driver.findElement(By.id("email_create"));
+        emailInputBox.sendKeys("aliveli4950@gmail.com");
+
 
     }
     @BeforeMethod
