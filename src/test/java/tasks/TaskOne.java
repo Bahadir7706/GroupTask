@@ -5,12 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class Task1 {
-
+public class TaskOne {
     /*  I randomly selected this case from https://www.techlistic.com/2020/06/automate-ecommerce-website.html ,
     the website recommended by our mentor. We can change it, if you like.
      */
@@ -30,7 +28,6 @@ public class Task1 {
     WebDriver driver;
     @Test
     public  void test1() throws InterruptedException {
-        System.out.println("helps");
         //1.Navigate to url:  http://automationpractice.com/index.php
         driver.get("http://automationpractice.com/index.php");
         driver.manage().window().maximize();
@@ -39,12 +36,7 @@ public class Task1 {
         WebElement signInButton = driver.findElement(By.cssSelector(".login"));
         signInButton.click();
 
-        //It takes some time so it will be better to wait for 2 seconds
-        Thread.sleep(2000);
-
-        //Enter your email address in 'Create and account' section.
-       // WebElement emailBox = driver.findElement(By.cssSelector("#email_create"));
-       // emailBox.sendKeys("bkuysal@yahoo.com");
+        Thread.sleep(3000);
 
         //3.Locate to "email adress input box" and enter an email
         WebElement emailInputBox = driver.findElement(By.id("email_create"));
@@ -54,49 +46,17 @@ public class Task1 {
         WebElement createAnAccountButton = driver.findElement(By.xpath("//button[@class='btn btn-default button button-medium exclusive']"));
         createAnAccountButton.click();
 
-        Thread.sleep(5000);
+        Thread.sleep(3000);
 
-        //5.Locate information input boxes and send information
-        WebElement genderButton = driver.findElement(By.cssSelector("#id_gender1"));
-        genderButton.click();
-        WebElement firstNameInput = driver.findElement(By.id("customer_firstname"));
-        firstNameInput.sendKeys("Ali");
-        WebElement lastNameInput = driver.findElement(By.xpath("//*[@id='customer_lastname']"));
-        lastNameInput.sendKeys("Veli");
-        WebElement passwordInput = driver.findElement(By.id("passwd"));
-        passwordInput.sendKeys("1234");
-        WebElement dayButton = driver.findElement(By.id("days"));
-        dayButton.click();
-        //can not locate numbers of the days
-        WebElement newsLetterChckBx = driver.findElement(By.cssSelector("[name='newsletter']"));
-        Assert.assertFalse(newsLetterChckBx.isSelected(),"NewsLetter CheckBox is SELECTED");
-        WebElement specialOfferChckBx = driver.findElement(By.id("optin"));
-        Assert.assertFalse(specialOfferChckBx.isSelected(),"Special Offer Check Box is SELECTED");
-        newsLetterChckBx.click();
-        specialOfferChckBx.click();
-        WebElement companyName = driver.findElement(By.id("company"));
-        companyName.sendKeys("Apple");
-
-
-
-
-
-        //Click to create account button
-        driver.findElement(By.id("SubmitCreate")).click();
-        Thread.sleep(2000);
-
-
+        //Step five-additional info provided
+        WebElement additionalInfo = driver.findElement(By.cssSelector("#other"));
+        additionalInfo.sendKeys("this is a temporary address");
     }
     @BeforeMethod
     public void openChromeBrowser(){
         WebDriverManager.chromedriver().setup();
         driver= new ChromeDriver();
 
-        //nice work!
-
-        //added from o
-        //new added from onur
-        //another functi2
     }
 
 
