@@ -5,10 +5,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class Task1 {
+
     /*  I randomly selected this case from https://www.techlistic.com/2020/06/automate-ecommerce-website.html ,
     the website recommended by our mentor. We can change it, if you like.
      */
@@ -48,6 +50,37 @@ public class Task1 {
         WebElement emailInputBox = driver.findElement(By.id("email_create"));
         emailInputBox.sendKeys("aliveli4950@gmail.com");
 
+        //4. Click on Create an Account button.
+        WebElement createAnAccountButton = driver.findElement(By.xpath("//button[@class='btn btn-default button button-medium exclusive']"));
+        createAnAccountButton.click();
+
+        Thread.sleep(5000);
+
+        //5.Locate information input boxes and send information
+        WebElement genderButton = driver.findElement(By.cssSelector("#id_gender1"));
+        genderButton.click();
+        WebElement firstNameInput = driver.findElement(By.id("customer_firstname"));
+        firstNameInput.sendKeys("Ali");
+        WebElement lastNameInput = driver.findElement(By.xpath("//*[@id='customer_lastname']"));
+        lastNameInput.sendKeys("Veli");
+        WebElement passwordInput = driver.findElement(By.id("passwd"));
+        passwordInput.sendKeys("1234");
+        WebElement dayButton = driver.findElement(By.id("days"));
+        dayButton.click();
+        //can not locate numbers of the days
+        WebElement newsLetterChckBx = driver.findElement(By.cssSelector("[name='newsletter']"));
+        Assert.assertFalse(newsLetterChckBx.isSelected(),"NewsLetter CheckBox is SELECTED");
+        WebElement specialOfferChckBx = driver.findElement(By.id("optin"));
+        Assert.assertFalse(specialOfferChckBx.isSelected(),"Special Offer Check Box is SELECTED");
+        newsLetterChckBx.click();
+        specialOfferChckBx.click();
+        WebElement companyName = driver.findElement(By.id("company"));
+        companyName.sendKeys("Apple");
+
+
+
+
+
         //Click to create account button
         driver.findElement(By.id("SubmitCreate")).click();
         Thread.sleep(2000);
@@ -60,9 +93,10 @@ public class Task1 {
         driver= new ChromeDriver();
 
         //nice work!
+
+        //added from o
         //new added from onur
-        //another function
-        //added from onur
+        //another functi2
     }
 
 
