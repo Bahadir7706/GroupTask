@@ -67,6 +67,8 @@ public class TaskOne {
         Assert.assertFalse(specialOfferChckBx.isSelected(),"Special Offer Check Box is SELECTED");
         newsLetterChckBx.click();
         specialOfferChckBx.click();
+        WebElement companyName = driver.findElement(By.id("company"));
+        companyName.sendKeys("Apple");
 
 
 
