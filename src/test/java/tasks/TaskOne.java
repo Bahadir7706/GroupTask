@@ -47,7 +47,7 @@ public class TaskOne {
         WebElement createAnAccountButton = driver.findElement(By.xpath("//button[@class='btn btn-default button button-medium exclusive']"));
         createAnAccountButton.click();
 
-        Thread.sleep(4000);
+        Thread.sleep(5000);
 
         //5.Locate information input boxes and send information
         WebElement genderButton = driver.findElement(By.cssSelector("#id_gender1"));
@@ -65,6 +65,8 @@ public class TaskOne {
         Assert.assertFalse(newsLetterChckBx.isSelected(),"NewsLetter CheckBox is SELECTED");
         WebElement specialOfferChckBx = driver.findElement(By.id("optin"));
         Assert.assertFalse(specialOfferChckBx.isSelected(),"Special Offer Check Box is SELECTED");
+        newsLetterChckBx.click();
+        specialOfferChckBx.click();
 
 
 
