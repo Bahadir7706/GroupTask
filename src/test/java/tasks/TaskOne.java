@@ -51,6 +51,9 @@ public class TaskOne {
         //5.Locate information input boxes and send information
         WebElement genderButton = driver.findElement(By.cssSelector("#id_gender1"));
         genderButton.click();
+        WebElement firstNameInput = driver.findElement(By.id("customer_firstname"));
+        firstNameInput.sendKeys("Ali");
+
 
 
     }
