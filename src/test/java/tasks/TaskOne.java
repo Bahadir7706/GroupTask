@@ -55,6 +55,9 @@ public class TaskOne {
         firstNameInput.sendKeys("Ali");
         WebElement lastNameInput = driver.findElement(By.xpath("//*[@id='customer_lastname']"));
         lastNameInput.sendKeys("Veli");
+        WebElement passwordInput = driver.findElement(By.id("passwd"));
+        passwordInput.sendKeys("1234");
+
 
 
 
