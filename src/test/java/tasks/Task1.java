@@ -27,7 +27,7 @@ public class Task1 {
 
     WebDriver driver;
     @Test
-    public  void test1(){
+    public  void test1() throws InterruptedException {
         //1.Navigate to url:  http://automationpractice.com/index.php
         driver.get("http://automationpractice.com/index.php");
         driver.manage().window().maximize();
@@ -36,6 +36,9 @@ public class Task1 {
         WebElement signInButton = driver.findElement(By.cssSelector(".login"));
         signInButton.click();
 
+        //It takes some time so it will be better to wait for 2 seconds
+        Thread.sleep(2000);
+
         //Enter your email address in 'Create and account' section.
        // WebElement emailBox = driver.findElement(By.cssSelector("#email_create"));
        // emailBox.sendKeys("bkuysal@yahoo.com");
@@ -43,6 +46,8 @@ public class Task1 {
         //3.Locate to "email adress input box" and enter an email
         WebElement emailInputBox = driver.findElement(By.id("email_create"));
         emailInputBox.sendKeys("aliveli4950@gmail.com");
+
+        //
 
 
     }
