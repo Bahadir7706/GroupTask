@@ -28,7 +28,7 @@ public class TaskOne {
 
     WebDriver driver;
     @Test
-    public  void test1(){
+    public  void test1() throws InterruptedException {
         //1.Navigate to url:  http://automationpractice.com/index.php
         driver.get("http://automationpractice.com/index.php");
         driver.manage().window().maximize();
