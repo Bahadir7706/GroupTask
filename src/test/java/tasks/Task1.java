@@ -47,7 +47,9 @@ public class Task1 {
         WebElement emailInputBox = driver.findElement(By.id("email_create"));
         emailInputBox.sendKeys("aliveli4950@gmail.com");
 
-        //
+        //Click to create account button
+        driver.findElement(By.id("SubmitCreate")).click();
+        Thread.sleep(2000);
 
 
     }
