@@ -53,6 +53,9 @@ public class TaskOne {
         genderButton.click();
         WebElement firstNameInput = driver.findElement(By.id("customer_firstname"));
         firstNameInput.sendKeys("Ali");
+        WebElement lastNameInput = driver.findElement(By.xpath("//*[@id='customer_lastname']"));
+        lastNameInput.sendKeys("Veli");
+
 
 
 
