@@ -46,7 +46,7 @@ public class TaskOne {
         WebElement createAnAccountButton = driver.findElement(By.xpath("//button[@class='btn btn-default button button-medium exclusive']"));
         createAnAccountButton.click();
 
-        Thread.sleep(2000);
+        Thread.sleep(3000);
 
         //5.Locate information input boxes and send information
         WebElement genderButton = driver.findElement(By.cssSelector("#id_gender1"));
@@ -57,6 +57,8 @@ public class TaskOne {
         lastNameInput.sendKeys("Veli");
         WebElement passwordInput = driver.findElement(By.id("passwd"));
         passwordInput.sendKeys("1234");
+        WebElement dayButton = driver.findElement(By.id("days"));
+        dayButton.click();
 
 
 
