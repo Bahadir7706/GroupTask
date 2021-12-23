@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -46,7 +47,7 @@ public class TaskOne {
         WebElement createAnAccountButton = driver.findElement(By.xpath("//button[@class='btn btn-default button button-medium exclusive']"));
         createAnAccountButton.click();
 
-        Thread.sleep(3000);
+        Thread.sleep(4000);
 
         //5.Locate information input boxes and send information
         WebElement genderButton = driver.findElement(By.cssSelector("#id_gender1"));
@@ -59,6 +60,12 @@ public class TaskOne {
         passwordInput.sendKeys("1234");
         WebElement dayButton = driver.findElement(By.id("days"));
         dayButton.click();
+        //can not locate numbers of the days
+        WebElement newsLetterChckBx = driver.findElement(By.cssSelector("[name='newsletter']"));
+        Assert.assertFalse(newsLetterChckBx.isSelected(),"NewsLetter CheckBox is SELECTED");
+        WebElement specialOfferChckBx = driver.findElement(By.id("optin"));
+        Assert.assertFalse(specialOfferChckBx.isSelected(),"Special Offer Check Box is SELECTED");
+
 
 
 
