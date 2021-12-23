@@ -49,7 +49,7 @@ public class UserRegistrationTest {
         Assert.assertTrue(mrButton.isSelected(), "Mr is not selected as gender");
         Assert.assertFalse(mrsButton.isSelected(), "Mrs is selected as gender");
 
-
+        // no function added
 
 
 
