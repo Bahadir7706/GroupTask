@@ -9,7 +9,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class Task1 {
-
     /*  I randomly selected this case from https://www.techlistic.com/2020/06/automate-ecommerce-website.html ,
     the website recommended by our mentor. We can change it, if you like.
      */
@@ -61,6 +60,8 @@ public class Task1 {
         driver= new ChromeDriver();
 
         //nice work!
+        //new added from onur
+        //another function
         //added from onur
     }
 
