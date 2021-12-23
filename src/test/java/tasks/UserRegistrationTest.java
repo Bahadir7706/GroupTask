@@ -3,9 +3,12 @@ package tasks;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
+
+import java.util.ArrayList;
 
 public class UserRegistrationTest {
 
@@ -30,12 +33,42 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void signIn(){
+    public void signIn() throws InterruptedException {
         driver.get("http://automationpractice.com/index.php");
-        driver.findElement(By.xpath("//*[@class='login']")).click();
+        driver.findElement(By.cssSelector(".login")).click();
+
         WebElement emailBox=driver.findElement(By.cssSelector("#email_create"));
         emailBox.sendKeys("benjamin2955@gmail.com");
+
         driver.findElement(By.cssSelector("#SubmitCreate>span")).click();
+        Thread.sleep(3000);
+
+        WebElement mrButton=driver.findElement(By.cssSelector("#id_gender1"));
+        WebElement mrsButton=driver.findElement(By.cssSelector("#id_gender2"));
+        mrButton.click();
+        Assert.assertTrue(mrButton.isSelected(), "Mr is not selected as gender");
+        Assert.assertFalse(mrsButton.isSelected(), "Mrs is selected as gender");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
 
