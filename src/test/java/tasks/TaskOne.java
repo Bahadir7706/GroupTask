@@ -33,11 +33,13 @@ public class TaskOne {
         driver.get("http://automationpractice.com/index.php");
         driver.manage().window().maximize();
 
+        Thread.sleep(2000);
+
         //2.Locate to "sign in" link and click
         WebElement signInButton = driver.findElement(By.cssSelector(".login"));
         signInButton.click();
 
-        Thread.sleep(3000);
+     //   Thread.sleep(3000);
 
         //3.Locate to "email adress input box" and enter an email
         WebElement emailInputBox = driver.findElement(By.id("email_create"));
@@ -57,7 +59,7 @@ public class TaskOne {
         WebElement lastNameInput = driver.findElement(By.xpath("//*[@id='customer_lastname']"));
         lastNameInput.sendKeys("Veli");
         WebElement passwordInput = driver.findElement(By.id("passwd"));
-        passwordInput.sendKeys("1234");
+        passwordInput.sendKeys("12345");
         WebElement dayButton = driver.findElement(By.id("days"));
         dayButton.click();
         //can not locate numbers of the days
@@ -69,10 +71,27 @@ public class TaskOne {
         specialOfferChckBx.click();
         WebElement companyName = driver.findElement(By.id("company"));
         companyName.sendKeys("Apple");
-
-
-
-
+        WebElement addressInput1 = driver.findElement(By.id("address1"));
+        addressInput1.sendKeys("5. street No:5 Apple Co. 5689 PB");
+        WebElement addresInput2 = driver.findElement(By.cssSelector("#address2"));
+        addresInput2.sendKeys("5.floor");
+        WebElement cityInput = driver.findElement(By.xpath("//*[@id='city']"));
+        cityInput.sendKeys("San Fransisco");
+        WebElement postCode = driver.findElement(By.id("postcode"));
+        postCode.sendKeys("456124");
+        WebElement mobilePhone = driver.findElement(By.cssSelector("#phone_mobile"));
+        mobilePhone.sendKeys("+905555555555");
+        WebElement registerButton = driver.findElement(By.xpath("//span[text()='Register']"));
+        registerButton.click();
+        WebElement errorMessage = driver.findElement(By.cssSelector("div[class='alert alert-danger']"));
+        System.out.println("errorMessage.getText() = " + errorMessage.getText());
+        WebElement passwordBox = driver.findElement(By.id("passwd"));
+        Assert.assertEquals(passwordBox.getText(), "", "password box is NOT empty");
+        driver.findElement(By.id("postcode")).clear();
+        driver.findElement(By.id("postcode")).sendKeys("45612");
+        passwordBox.sendKeys("123456");
+        driver.findElement(By.xpath("//span[text()='Register']")).click();
+        System.out.println("driver.findElement(By.cssSelector(\"div[class='alert alert-danger']\")).getText() = " + driver.findElement(By.cssSelector("div[class='alert alert-danger']")).getText());
 
 
     }
@@ -81,6 +100,10 @@ public class TaskOne {
         WebDriverManager.chromedriver().setup();
         driver= new ChromeDriver();
 
+    }
+    @Test
+    public void test2(){
+        driver.get("https://google.com");
     }
 
 
